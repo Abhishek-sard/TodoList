@@ -1,15 +1,25 @@
-import React from 'react'
-import Create from './Create'
+import React, { useState } from 'react';
+import Create from './Create';
+import './home.css'
 
+function Home () {
+  const [todos, setTodos] = useState([]);
 
-
-const Home = () => {
   return (
-    <div>
+    <div className="home">
       <h2>Todo List</h2>
-      <Create/>
+      <Create />
+      {todos.length === 0 ? (
+        <div>
+          <h2>No Record</h2>
+        </div>
+      ) : (
+        todos.map((todo, index) => (
+          <div key={index}>{todo}</div>
+        ))
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

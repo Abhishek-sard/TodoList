@@ -1,0 +1,106 @@
+/* home.css */
+
+.home {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home h2 {
+  color: #3a4a6d;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.home h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Todo items container */
+.todo-items {
+  margin-top: 20px;
+}
+
+/* Individual todo item */
+.todo-item {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.todo-text {
+  font-size: 1.1rem;
+  color: #3a4a6d;
+  flex-grow: 1;
+}
+
+/* No records message */
+.no-records {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.no-records h2 {
+  color: #a1a8c3;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.no-records .icon {
+  font-size: 3rem;
+  color: #c3cfe2;
+  margin-bottom: 15px;
+}
+
+/* Animation for todo items */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .home {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .home h2 {
+    font-size: 1.8rem;
+  }
+}
